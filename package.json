@@ -1,0 +1,19 @@
+{
+  "name": "munch-e-api",
+  "version": "1.0.0",
+  "description": "API server for MunchE",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dZefa/munch-e-api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dZefa/munch-e-api/issues"
+  },
+  "homepage": "https://github.com/dZefa/munch-e-api#readme"
+}
