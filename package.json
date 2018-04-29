@@ -5,10 +5,10 @@
   "scripts": {
     "tsc": "tsc",
     "tsc-dev": "tsc -- --watch",
-    "start": "cross-env NODE_ENV=production node build/index.js",
-    "start-dev": "cross-env NODE_ENV=development node build/index.js",
+    "start": "cross-env NODE_ENV=production node build/server.js",
+    "start-dev": "cross-env NODE_ENV=development node build/server.js",
     "tslint": "tslint -c tslint.json -p tsconfig.json",
-    "test": "jest --forceExit --coverage --verbose"
+    "test": "cross-env NODE_ENV=test jest --forceExit --coverage --verbose"
   },
   "repository": {
     "type": "git",
