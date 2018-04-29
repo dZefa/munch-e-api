@@ -15,4 +15,7 @@ module.exports = {
     '**/__test__/**/*.test.(ts|js)'
   ],
   testEnvironment: 'node',
+  roots: [
+    '<rootDir>/__test__'
+  ]
 };
