@@ -5,7 +5,11 @@
 # Ops
 
 package-lock.json
-.env
+
+# Sensitive
+
+config/.env
+config/dev.env
 
 # Build
 
