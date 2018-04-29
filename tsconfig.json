@@ -1,9 +1,13 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "mdoule": "commonjs",
+    "module": "commonjs",
     "outDir": "./build",
     "strict": true,
     "esModuleInterop": true,
-  }
+    "rootDir": "./src"
+  }, 
+  "exclude": [
+    "node_modules"    
+  ]
 }
