@@ -17,9 +17,19 @@
   },
   "homepage": "https://github.com/dZefa/munch-e-api#readme",
   "dependencies": {
-    "express": "^4.16.3"
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "dotenv": "^5.0.1",
+    "express": "^4.16.3",
+    "morgan": "^1.9.0"
   },
   "devDependencies": {
+    "@types/body-parser": "^1.17.0",
+    "@types/cors": "^2.8.4",
+    "@types/dotenv": "^4.0.3",
+    "@types/es6-shim": "^0.31.36",
+    "@types/express": "^4.11.1",
+    "@types/morgan": "^1.7.35",
     "typescript": "^2.8.3"
   }
 }
