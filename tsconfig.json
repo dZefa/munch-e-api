@@ -7,7 +7,6 @@
     "esModuleInterop": true,
     "rootDir": "./src",
     "sourceMap": true,
-    "noImplicitAny": true
   }, 
   "exclude": [
     "node_modules"    
