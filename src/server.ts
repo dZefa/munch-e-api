@@ -12,7 +12,7 @@ const port = process.env.PORT || 3000;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
-app.use(morgan("short"));
+app.use(morgan('short'));
 
 app.listen(port, () => {
   logger(`Listening at http://localhost:${port}/`);
