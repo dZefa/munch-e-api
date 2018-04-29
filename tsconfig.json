@@ -5,10 +5,13 @@
     "outDir": "./build",
     "strict": true,
     "esModuleInterop": true,
-    "rootDir": "./src",
+    "baseUrl": ".",
     "sourceMap": true,
   }, 
   "exclude": [
-    "node_modules"    
+    "node_modules"
+  ],
+  "include": [
+    "src/**/*"
   ]
 }
