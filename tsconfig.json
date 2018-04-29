@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "mdoule": "commonjs",
+    "outDir": "./build",
+    "strict": true,
+    "esModuleInterop": true,
+  }
+}
