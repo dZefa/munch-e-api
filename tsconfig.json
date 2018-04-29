@@ -5,7 +5,9 @@
     "outDir": "./build",
     "strict": true,
     "esModuleInterop": true,
-    "rootDir": "./src"
+    "rootDir": "./src",
+    "sourceMap": true,
+    "noImplicitAny": true
   }, 
   "exclude": [
     "node_modules"    
