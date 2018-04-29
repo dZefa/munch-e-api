@@ -3,7 +3,10 @@ import bodyParser from 'body-parser';
 import cors from 'cors';
 import morgan from 'morgan';
 
-import { default as router } from './routes';
+import './util/secrets';
+
+import { router } from './routes';
+import { syncDB } from './util/syncDB';
 
 const app: express.Application = express();
 
@@ -16,5 +19,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 app.use('/api', router);
+
+syncDB(false);
 
 export default app;
