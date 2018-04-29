@@ -6,7 +6,8 @@
     "tsc": "tsc",
     "tsc-dev": "tsc -- --watch",
     "start": "cross-env NODE_ENV=production node build/index.js",
-    "start-dev": "cross-env NODE_ENV=development node build/index.js"
+    "start-dev": "cross-env NODE_ENV=development node build/index.js",
+    "tslint": "tslint -c tslint.json -p tsconfig.json"
   },
   "repository": {
     "type": "git",
@@ -35,6 +36,8 @@
     "@types/morgan": "^1.7.35",
     "@types/node": "^9.6.7",
     "cross-env": "^5.1.4",
+    "tslint": "^5.9.1",
+    "tslint-config-airbnb": "^5.8.0",
     "typescript": "^2.8.3"
   }
 }
