@@ -14,3 +14,8 @@ config/dev.env
 # Build
 
 build/
+
+
+# Test
+
+coverage/
