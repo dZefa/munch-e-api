@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "description": "API server for MunchE",
   "scripts": {
-    "tsc": "cross-env NODE_ENV=production tsc",
-    "tsc-dev": "cross-env NODE_ENV=development tsc",
-    "start": "cross-env tsc node build/index.js",
-    "start-dev": "cross-env tsc-dev node build/index.js"
+    "tsc": "tsc",
+    "tsc-dev": "tsc -- --watch",
+    "start": "cross-env NODE_ENV=production node build/index.js",
+    "start-dev": "cross-env NODE_ENV=development node build/index.js"
   },
   "repository": {
     "type": "git",
@@ -33,6 +33,7 @@
     "@types/es6-shim": "^0.31.36",
     "@types/express": "^4.11.1",
     "@types/morgan": "^1.7.35",
+    "@types/node": "^9.6.7",
     "cross-env": "^5.1.4",
     "typescript": "^2.8.3"
   }
