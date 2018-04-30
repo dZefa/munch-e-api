@@ -8,10 +8,10 @@ export const syncDB = (force: boolean) => {
   return sequelize.authenticate()
     .then(() => {
       logger(`Database authenticated!`);
-      User.sync({ force })
+      return User.sync({ force })
         .then(() => {
           logger(`User model synced!`);
-          Bio.sync({ force })
+          return Bio.sync({ force })
             .then(() => {
               logger(`Bio model synced!`);
             })
