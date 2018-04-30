@@ -10,6 +10,7 @@ package-lock.json
 
 config/.env
 config/dev.env
+config/test.env
 
 # Build
 
