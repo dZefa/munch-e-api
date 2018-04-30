@@ -9,7 +9,7 @@ export class UserService {
   private readonly _jwtSecret = process.env.JWT_SECRET!;
 
   static get userAttributes() {
-    return ['id', 'email', 'BioId'];
+    return ['id', 'email'];
   }
 
   private static _user: Bluebird<UserModel | null>;
@@ -21,7 +21,7 @@ export class UserService {
   register({ email, password }: UserAddModel) {
     return bcrypt.hash(password, this._saltRounds)
       .then((hash) => {
-        return User.create({ email, password: hash, BioId: null })
+        return User.create({ email, password: hash })
           .then((u: UserModel) => this.getUserById(u.id));
       });
   }
