@@ -6,7 +6,6 @@ import morgan from 'morgan';
 import './util/secrets';
 
 import { router } from './routes';
-import { syncDB } from './util/syncDB';
 
 const app: express.Application = express();
 
@@ -19,7 +18,5 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 app.use('/api', router);
-
-syncDB(false);
 
 export default app;
