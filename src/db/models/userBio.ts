@@ -1,7 +1,7 @@
 import { default as Sequelize } from 'sequelize';
 import { sequelize } from '../index';
 
-import { User, UserModel } from './user';
+import { User } from './user';
 
 export interface BioAddModel {
   firstName: string | null;
@@ -21,8 +21,8 @@ export interface BioModel extends Sequelize.Model<BioModel, BioAddModel> {
 }
 
 export interface BioViewModel {
-  firstName: string;
-  lastName: string;
+  firstName: string | null;
+  lastName: string | null;
   UserId: number;
 }
 
@@ -41,4 +41,5 @@ export const Bio = sequelize.define<BioModel, BioAddModel> ('bio', {
   },
 });
 
-Bio.belongsTo(User, { foreignKey: { allowNull: false, name: 'UserId' }, onDelete: 'CASCADE' });
+Bio.belongsTo(User, { foreignKey: { name: 'UserId', allowNull: false }, onDelete: 'CASCADE' });
+
