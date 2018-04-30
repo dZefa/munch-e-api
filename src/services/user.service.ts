@@ -1,6 +1,7 @@
 import { default as bcrypt } from 'bcrypt';
 import { default as jwt } from 'jsonwebtoken';
 import { default as Bluebird } from 'bluebird';
+
 import { User, UserModel, UserAddModel, UserViewModel } from '../db/models/user';
 
 export class UserService {
@@ -8,7 +9,7 @@ export class UserService {
   private readonly _jwtSecret = process.env.JWT_SECRET!;
 
   static get userAttributes() {
-    return ['id', 'email'];
+    return ['id', 'email', 'BioId'];
   }
 
   private static _user: Bluebird<UserModel | null>;
@@ -20,8 +21,8 @@ export class UserService {
   register({ email, password }: UserAddModel) {
     return bcrypt.hash(password, this._saltRounds)
       .then((hash) => {
-        return User.create({ email, password: hash })
-          .then((u: UserModel) => this.getUserById(u!.id));
+        return User.create({ email, password: hash, BioId: null })
+          .then((u: UserModel) => this.getUserById(u.id));
       });
   }
 
