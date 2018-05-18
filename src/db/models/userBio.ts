@@ -23,6 +23,7 @@ export interface BioModel extends Sequelize.Model<BioModel, BioAddModel> {
 export interface BioViewModel {
   firstName: string | null;
   lastName: string | null;
+  dob: string | null;
   UserId: number;
 }
 
