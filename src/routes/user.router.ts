@@ -9,7 +9,7 @@ import { UserAddModel } from '../db/models/user';
 export const userRouter: Router = Router();
 const userService = new UserService();
 
-userRouter.post('/register', userRules['forRegister'], (req: Request, res: Response): object => {
+userRouter.post('/register', userRules['forRegister'], (req: Request, res: Response) => {
   const errors = validationResult(req);
 
   if (!errors.isEmpty()) {
