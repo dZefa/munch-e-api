@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "API server for MunchE",
   "scripts": {
-    "tsc": "tsc",
-    "tsc-dev": "tsc -- --watch",
+    "tsc": "tsc -p tsconfig.build.json",
+    "tsc-dev": "tsc --watch -p tsconfig.build.json",
     "start": "cross-env NODE_ENV=production node build/server.js",
     "start-dev": "cross-env NODE_ENV=development node build/server.js",
     "tslint": "tslint -c tslint.json -p tsconfig.json",
