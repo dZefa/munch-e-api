@@ -23,6 +23,15 @@ export class BioService {
       .then((result: [number, BioModel[]]) => this.getBioByUserId(result[1][0].id));
   }
 
+  getBio({ UserId }: BioAddModel) {
+    return Bio.findOne({ where: { UserId } })
+      .then(async (b) => {
+        const bio = b && await this.getBioByUserId(b.id);
+
+        return bio;
+      });
+  }
+
   getBioByUserId(id: number) {
     return Bio.findById(id, {
       attributes: BioService.bioAttributes,
