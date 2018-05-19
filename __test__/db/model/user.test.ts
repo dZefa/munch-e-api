@@ -14,16 +14,24 @@ describe('User Model', () => {
     return User.drop();
   });
 
-  it('should add a single User successfully', () => {
-    const testUser = {
-      email: 'tester@test.com',
-      password: 'testing',
-    };
+  const testUser = {
+    email: 'tester@test.com',
+    password: 'testing',
+  };
 
+  it('should add a single User successfully', () => {
     const user = User.create(testUser);
 
     return user.then((u) => {
       expect(u.id).toBeGreaterThan(0);
+    });
+  });
+
+  it('should find test user', () => {
+    const user = User.findOne({ where: { email: testUser.email } });
+
+    return user.then((u) => {
+      expect(u).toBeDefined();
     });
   });
 });
