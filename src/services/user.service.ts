@@ -39,12 +39,10 @@ export class UserService {
       jwt.verify(token, this._jwtSecret, (err, decoded: any) => {
         if (err) {
           resolve(false);
-          return;
+        } else {
+          UserService._user = User.findById(decoded['id']);
+          resolve(true);
         }
-
-        UserService._user = User.findById(decoded['id']);
-        resolve(true);
-        return;
       });
     }) as Promise<Boolean>;
   }
