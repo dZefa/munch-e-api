@@ -32,7 +32,7 @@ describe('Bio Model', () => {
     dob: 'dateformat',
   };
 
-  it('should add a single User and their Bio', () => {
+  it('should add a single User and their Bio', (done) => {
     User.create(testUser)
       .then((u) => {
         Bio.create(Object.assign({}, testBio, { UserId: u.id }))
@@ -41,6 +41,7 @@ describe('Bio Model', () => {
             expect(b.firstName).toBe('Test');
             expect(b.lastName).toBe('Tester');
             expect(b.UserId).toBe(u.id);
+            done();
           });
       });
   });

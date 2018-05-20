@@ -19,20 +19,20 @@ describe('User Model', () => {
     password: 'testing',
   };
 
-  it('should add a single User successfully', () => {
-    const user = User.create(testUser);
-
-    return user.then((u) => {
-      expect(u.id).toBeGreaterThan(0);
-    });
+  it('should add a single User successfully', (done) => {
+    User.create(testUser)
+      .then((u) => {
+        expect(u.id).toBeGreaterThan(0);
+        done();
+      });
   });
 
-  it('should find test user', () => {
-    const user = User.findOne({ where: { email: testUser.email } });
-
-    return user.then((u) => {
-      expect(u).toBeDefined();
-    });
+  it('should find test user', (done) => {
+    User.findOne({ where: { email: testUser.email } })
+      .then((u) => {
+        expect(u).toBeDefined();
+        done();
+      });
   });
 });
 
