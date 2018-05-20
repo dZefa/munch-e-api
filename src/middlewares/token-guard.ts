@@ -8,9 +8,7 @@ const userService = new UserService();
 function getTokenFromHeaders(headers: IncomingHttpHeaders) {
   const header = headers.authorization as string;
 
-  if (!header) return header;
-
-  return header.split(' ')[1];
+  return header;
 }
 
 export const tokenGuard: (() => RequestHandler) = (() => (req, res, next) => {
