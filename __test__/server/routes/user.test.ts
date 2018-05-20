@@ -9,7 +9,7 @@ describe('/user', () => {
 
   describe('/register', () => {
     it('should register single test user', (done) => {
-      return supertest(app).post('/register')
+      return supertest(app).post('/api/user/register')
         .send(Object.assign({}, testUser, { confirmPassword: 'testing' }))
         .set('Content-Type', 'application/json')
         .set('Accept', 'application/json')
@@ -22,7 +22,7 @@ describe('/user', () => {
 
   describe('/login', () => {
     it('should login and return token', (done) => {
-      return supertest(app).post('/login')
+      return supertest(app).post('/api/user/login')
         .send(testUser)
         .set('Content-Type', 'application/json')
         .set('Accept', 'application/json')
