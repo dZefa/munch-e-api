@@ -1,4 +1,4 @@
-import { check } from 'express-validator/check';
+import { check, query } from 'express-validator/check';
 import { Bio } from '../db/models/userBio';
 
 export const bioRules = {
@@ -16,5 +16,10 @@ export const bioRules = {
         .withMessage('Invalid Date format'),
     check('firstName'),
     check('lastName'),
+  ],
+  toGetBio: [
+    query('id')
+      .custom(id => id && !isNaN(id))
+        .withMessage('Invalid id or is not defined'),
   ],
 };
